@@ -1,0 +1,68 @@
+div {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ol, ul{
+	list-style: none;
+}
+
+li {
+	list-style: circle;
+	line-height: 1.5;
+	margin-left: 20px;
+}
+
+.left {
+	float: left;
+	position: relative;
+}
+
+.right {
+	float: right;
+	position: right;
+}
+
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 600px;
+  position: relative;
+  width: 60%;
+}
+
+.navigation ul {
+	display: block;
+	margin: 10px;
+	position: relative;
+}
+
+.navigation ul li {
+	display: block;
+	margin: 10px 4em 20px 4em;
+	font-size: 80%;
+	position: relative
+	text-align: center;
+}
+
+.header {
+	clear: both;
+	display: block;
+	position: relative;
+}
+
+#title {
+	font-family: Arial, Helvetica, sans-serif; 
+	text-align: center; 
+	font-size: 45px
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
