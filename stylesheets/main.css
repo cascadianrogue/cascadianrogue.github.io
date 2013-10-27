@@ -70,12 +70,17 @@ strong {
 }
 
 a {
-  color: #000000;
+  color: #999999;
   text-decoration: none;
 }
 
 a:hover {
   font-weight: bold;
+}
+
+h2 a:hover {
+  font-weight:normal;
+  text-decoration: underline;
 }
 
 h1 {
@@ -235,7 +240,7 @@ img {
 }
 
 .resume{
-  background-color: CadetBlue;
+  background-color: black;
 }
 
 /* ---------------- End Custom CSS ------------------- */
