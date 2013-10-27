@@ -12,7 +12,6 @@
 
 <body>
 	<div id="wrapper">
-
 		<div class='navigation'>
 			<ul>
 				<a href="about.html">
@@ -23,31 +22,32 @@
 				</a>
 			</ul>
 		</div>
-
-
-	</div>
-	<section class="content">
 		<div class="header">
-			<h1>
-				Mike Psaris
-			</h1>
+
+			<h1>  Mike Psaris  </h1>
+
 		</div>
-		<div id="map">
-			<script>
-			var map = L.map('map').setView([45.51,-122.67], 14);
 
-			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-				attributioon: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
-			var marker = L.marker([45.516469,-122.676208]).addTo(map);
+		<section class="content">
 
-			marker.bindPopup("I live in Portland.");
+			<div id="map">
+				<script>
+				var map = L.map('map').setView([45.51,-122.67], 14);
 
-			</script>
+				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+					attributioon: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+
+				var marker = L.marker([45.516469,-122.676208]).addTo(map);
+
+				marker.bindPopup("I live in Portland.");
+
+				</script>
+			</div>
+		</section>
+		<div class="footer">
+			<a href="index.html">home</a>
 		</div>
-	</section>
-	<div class="footer">
-		<a href="index.html">home</a>
 	</div>
 </body>
 </html>
