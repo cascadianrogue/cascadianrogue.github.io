@@ -38,9 +38,17 @@
 				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 					attributioon: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
-				var marker = L.marker([45.516469,-122.676208]).addTo(map);
+				var marker = L.marker([45.514722,-122.678889]).addTo(map);
 
-				marker.bindPopup("I live in Portland.");
+				marker.bindPopup("<strong>I live in <a href='http://www.theguardian.com/travel/2013/may/25/portland-oregon-fred-armisen-weird-wonderful' target='_blank'>Portland</a>.</strong>");
+
+				var school = L.marker([45.512778,-122.685278]).addTo(map);
+
+				school.bindPopup("<strong>I'm finishing my masters<br> deree in <a href='http://www.pdx.edu/geography/' target='_blank'>Geography</a> at<br>Portland State University.</strong>");
+
+				var wings = L.marker([45.522778,-122.648056]).addTo(map);
+
+				wings.bindPopup("<strong>You can get some <br><em>amazing</em> wings <a href='http://www.portlandwings.com/index.php' target='_blank'>here</a>.</strong>");
 
 				</script>
 			</div>
