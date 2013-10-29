@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="stylesheets/main.css" type="text/css" />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+  <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
+    <![endif]-->
+    <style>
+    #map { margin-right: auto; margin-left: auto; top:0; bottom:0; width:100%; }
+    </style>
+    <title>Long Island</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class='navigation'>
+			<ul>
+				<a href="about.html">
+					<li class="left">about</li>
+				</a>
+				<a href="long-island.html">
+					<li class="left">projects</li>
+				</a>
+				<a href="resume.html">
+					<li class="right">resume</li>
+				</a>
+			</ul>
+		</div>
+		<div class="header">
+			<h1 class="title"> </h1>
+		</div>
+		<div class="page-text">
+			<br>
+			<br>
+			<h2>  We in Portland like making maps of our fair city, but I grew up on Long Island about an hour east of NYC, so I need to give them some love.  This is my first <a href="https://www.mapbox.com/ "target='_blank'>mapbox</a> map.  These colors are "cusom", in that I played with some HSLA settings for about five minutes until it looked kinda cool.</h2>
+
+		</div>
+
+
+		<section class="content">
+			<div id='map'></div>
+			<script type='text/javascript'>
+			var map = L.mapbox.map('map', 'mpsaris01.map-sh7m16wo').setView([40.82316279497129,-73.27357421875],9);
+			</script>
+			
+		</section>
+		<div class="footer">
+			<a href="/">home</a>
+		</div>
+	</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+</body>
+</html>
