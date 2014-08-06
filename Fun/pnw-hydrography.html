@@ -2,14 +2,13 @@
 <html>
 <head>
 	<link rel="stylesheet" href="stylesheets/main.css" type="text/css" />
-	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
-	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
   <!--[if lte IE 8]>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
     <![endif]-->
     <style>
-    #map { margin-right: auto; margin-left: auto; top:0; bottom:0; width:550px; height: 550px }
+    #map { margin-right: auto; margin-left: auto; top:0; bottom:0; height: 500px}
     </style>
     <title>PNW Hydrography</title>
 </head>
@@ -18,27 +17,31 @@
 	<div id="wrapper">
 		<div class='navigation'>
 			<ul>
-					<li class="left"><a href="about.html">about</a></li>
-					<li class="center"><a href="long-island.html">projects</a></li>
-					<li class="right"><a href="resume.html">resume</a></li>
+				<li class="left"><a href="about.html">about</a></li>
+				<li class="center"><a href="long-island.html">projects</a></li>
+				<li class="right"><a href="resume.html">resume</a></li>
 			</ul>
 		</div>
-		<div class="header">
+		<!-- <div class="header">
 			<h1 class="title">Hydrography in the Pacific Northwest</h1>
-		</div>
+		</div> -->
 		<div class="page-text" style="text-align: center;">
-			<br>
-			<br>
-			<h2 style="text-align: center;">Ever wonder what the river system in your region looks like? Or how much water flows through a stream
-				on any given year? Check out this MapBox map below which is based off of the National Hydrography Dataset (NHD).</h2>
-
+			<h1 style="text-align:center; font-size:200%">Hydrography of the Pacific Northwest</h1>
+			<h4 style="text-align:center">7/21/2014</h4>
+			<p style="a:hover{text-decoration:underline;}">Ever wonder what path a river takes? Or how much water flows through a stream on any given year? Check out this MapBox map I made with Tilemill which shows all the streams in the Pacific Northwest. If you mouse over a stream, a window will pop up in the top right showing the stream name (if it has one), and the estimated average flow rate in cubic feet per second (cfs). Now, of course, the winters are really wet here and the summers are really dry so these estimates average out the seasonal differences to give you a general pattern of flows. </p>
+			<div id='map'></div>
+			<script type='text/javascript'>
+			var map = L.mapbox.map('map', 'mpsaris01.j1376g9i', {
+				minZoom: 6,
+				maxZoom: 10}).setView([45.359, -118],6);
+			</script>
 		</div>
 
 
-		<section class="content">
+<!-- 		<section class="content">
 			<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/mpsaris01.j1376g9i/page.html?access_token=pk.eyJ1IjoibXBzYXJpczAxIiwiYSI6ImNBNDRSUkUifQ.o5l8AZp3bO52Lb52G1rBcQ#3/48.40/-80.51'></iframe>
 			
-		</section>
+		</section> -->
 		<div class="footer">
 			<a href="/">home</a>
 		</div>
