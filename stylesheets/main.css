@@ -112,12 +112,14 @@ h2 {
 h3 {
   font-size: 125%;
   line-height: 1.25;
+  text-align:center;
 }
 
 p {
   line-height: 1.5;
   margin-bottom: 1.2em;
   margin-top: 1.2em;
+  text-align: justify;
 }
 
 li {

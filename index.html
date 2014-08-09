@@ -5,12 +5,12 @@
 	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
 	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
   <!--[if lte IE 8]>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.ie.css' rel='stylesheet' >
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
     <![endif]-->
     <style>
     #map { margin-right: auto; margin-left: auto; top:0; bottom:0; height: 500px}
     </style>
-    <title>Mike Psaris</title>
+    <title>PNW Streams and Rivers</title>
 </head>
 
 <body>
@@ -18,41 +18,29 @@
 		<div class='navigation'>
 			<ul>
 				<li class="left"><a href="about">about</a></li>
-				<li class="center"><a href="long-island">projects</a></li>
+				<li class="center"><a href="projects">projects</a></li>
 				<li class="right"><a href="resume">resume</a></li>
 			</ul>
 		</div>
-<!-- 		<div class="header">
-			<h1 class="title"> </h1>
-		</div> -->
-		<div class="page-text">
-			<h1 style="text-align:center; font-size:200%">SESAME</h1>
-			<h3 style="text-align:center">(Spatial Ecosystem Services Analysis, Modeling, and Evaluation)</h3>
-			<h4 style="text-align:center">3/26/2014</h4>
-			<p style="a:hover{text-decoration:underline;}">Water is integral to life on Earth.  It constitutes 60% of an adult human being's mass, and an even larger percent of plants. While 70% of the Earth's surface is covered by water, only a small fraction of that is fresh water, suitable for use by humans for nourishment, agriculture, industry, and recreation.  Because this usable, freshwater is limited, natural resource agencies and research institutions put a lot of effort into better understanding the spatial and temporal patterns of water supply and water quality. While historic patterns are well understood, the future is fraught with uncertainty.  Human induced climate change will alter temperature and precipitation patterns, and the world-wide pattern of migration from rural to urban centers will have important implications for water resources.</p>
-			<p>When I began grad school in 2011, my adviser, <a href="http://www.web.pdx.edu/~changh/" target='_blank'>Heejun Chang</a>, hired me on to help with his <a href="http://www.nsf.gov/" target='_blank'>NSF</a> funded research.  The <a href="http://www.pdx.edu/ecosystem-services/" target='_blank'>SESAME Project's</a> goal has been to "test landscape-scale computational models with field data" so that we can better identify areas which are critical to the health of our freshwater resources.  The fruits of this project have so far consisted of two successfully defended theses, and two publications.  My thesis consisted of using the Soil and Water Assessment Tool (<a href="http://swat.tamu.edu/" target='_blank'>SWAT</a>) to project changes in future water supply (aka water yield) and water quality as well as the effectiveness of vegetated filter strips in filtering water before it flows into streams. I did this by constructing two SWAT models of the Tualatin and Yamhill basins, which you can see in the map below. The Tualatin is located west of the Portland Metro area and is the more managed basin. The Yamhill is a less populated, more agriculturally dominated basin to the south. Some important locations of flow modifications due to waste water treatment facilities, dams, and inter-basin transfers can also be seen in the map below. </p>
+		<div class="page-text" style="text-align: center;">
+			<h1 style="text-align:center; font-size:200%">Mapping Streams in the Pacific Northwest</h1>
+			<h4 style="text-align:center">7/21/2014</h4>
+			<p style="a:hover{text-decoration:underline;}">I like visualizing river networks because they often times explain why the topography in any given area looks the way it does. The <a href="http://nhd.usgs.gov/" target='_blank'>National Hydrography Dataset</a> is a geo database of all the catalogued streams in the US and includes lots of stream attributes such as stream name and estimated annual flow. This second attribute is cool because I can use it to change the symbology of the river so larger streams get darker line colors and wider line widths, while smaller streams get lighter line colors and narrower line widths. Using flow directly is difficult when mapping the whole Columbia River Basin since the Columbia River has such large flow volumes relative to the other streams (~265,000 cfs at the mouth). Basically, the histogram of flows throughout the region is heavily right skewed to the point where good symbology is near impossible. To make the data usable I took the fifth root of flows. While the results are still not normal, they are MUCH better, and as you can see on the map, streams like the Willamette, Deschutes and Snake pop out when they should.</p>
+
 			<div id='map'></div>
+			<p style="a:hover{text-decoration:underline;}">Once I finished the symbology, I moved on to creating the map. I wanted to show the streams on top of the terrain but I didn't want to create my own base-layer. Instead, I used TileMill to symbolize my streams with no baselayer, exported them to MBTiles which I could then upload to Mapbox and display on top of their terrain basemap with roads and labels turned off. <a href="https://www.mapbox.com/foundations/an-open-platform/#mbtiles" target='_blank'>MBTiles</a> are a lot cooler than I originally realized because they can store mouse-over data and other information inside the tiles. It was therefore very easy to include stream name and estimated annual flows as a popup for each stream. I limited the zoom extents of the map to a range of six to ten since the size of the MBTiles grows exponentially for each additional zoom level. At this zoom range and spatial extent the MBTiles already took up 96 Mb! 
+			</p>
+			<p>So there you have it. All the major streams in the Pacific Northwest! Some of the stream names are blank. That's because they are unnamed. I'm going to have fun poking around the region looking at streams that are named. It seems like you could make a fun little trivia quiz out of this. Whatever you end up using this for, I hope you enjoy it. I'm going to be thinking about how I can add some more data to the map and make it more interactive. Feel free to email me with any cool ideas.
+			</p>
 			<script type='text/javascript'>
-			var map = L.mapbox.map('map', 'mpsaris01.hflnihfj').setView([45.359, -123.146],9);
+			var map = L.mapbox.map('map', 'mpsaris01.j1376g9i', {
+				minZoom: 6,
+				maxZoom: 10}).setView([45.359, -118],6);
 			</script>
-			<p>The results of my research confirm that vegetated filter strips are indeed effective at reducing the amount of sediment and nutrients in water. In all cases we saw at least a 40% reduction. We also found that there is large uncertainty in the response of sediment and nutrient levels to climate and urbanization.  This uncertainty is due to both our ability to project future precipitation patters, and also the difficulty of calibrating a SWAT model in a mixed use basin such as the Tualatin. Finally, my research suggests that the SWAT model has the capacity to identify areas of high polutant loads at a medium spatial scale, but since validation studies for this type of SWAT output have not yet been conducted, it is premature to use this methodology to guide management activities.  </p> 
-			<p>For more information on this research, I invite you to click on the link below which will take you to a presentation I recently gave to the Watershed Management Section of Oregon's Department of Environmental Quality.</p>
-			<h3 style="text-align:center"><a href="SWAT_Modeling_DEQ.pdf" target='_blank'>Assessing the Impacts of Climate Change, Urban Growth, and Filter Strips on Water Quality Using SWAT</a></h3>
-			<p>Thanks for visiting my website!  I hope to post any new projects, small or large, here as I embark upon them, so check back from time to time.</p>
-			<p></p>
-			<p>~Mike</p>
 		</div>
-
-
-<!-- 		<section class="content">
-			<div id='map'></div>
-
-			
-		</section> -->
 		<div class="footer">
 			<a href="/">home</a>
 		</div>
 	</div>
-
 </body>
 </html>
